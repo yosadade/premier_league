@@ -17,7 +17,7 @@ class PlayerCard extends StatelessWidget {
     return GestureDetector(
       onTap: _launchUrl,
       child: Container(
-        width: 98,
+        width: MediaQuery.of(context).size.width * 12 / 100 ,
         padding: EdgeInsets.only(bottom: 8),
         margin: EdgeInsets.only(top: 8, bottom: 8, right: 16),
         decoration: BoxDecoration(

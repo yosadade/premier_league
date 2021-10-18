@@ -9,7 +9,10 @@ class PositionCard extends StatelessWidget {
       decoration: BoxDecoration(
           border: Border(
         bottom: BorderSide(color: Color(0xff3C4043)),
-        left: BorderSide(color: Color(0xff4285F4), width: 3,),
+        left: BorderSide(
+          color: Color(0xff4285F4),
+          width: 3,
+        ),
       )),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -52,11 +55,23 @@ class PositionCard extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('1', style: primaryTextStyle.copyWith(fontSize: 14)),
-                Text('1', style: primaryTextStyle.copyWith(fontSize: 14)),
-                Text('1', style: primaryTextStyle.copyWith(fontSize: 14)),
-                Text('1', style: primaryTextStyle.copyWith(fontSize: 14)),
-                Text('1', style: primaryTextStyle.copyWith(fontSize: 14)),
+                Icon(
+                  Icons.check_circle_rounded,
+                  color: Color(0xff3FA757),
+                ),
+                Icon(
+                  Icons.check_circle_rounded,
+                  color: Color(0xff3FA757),
+                ),
+                Icon(
+                  Icons.do_not_disturb_on_rounded,
+                  color: Color(0xff9AA0A6),
+                ),
+                Icon(
+                  Icons.check_circle_rounded,
+                  color: Color(0xff3FA757),
+                ),
+                Icon(Icons.cancel_rounded, color: Color(0xffEA4336)),
               ],
             ),
           )
