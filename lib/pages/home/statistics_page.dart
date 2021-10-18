@@ -5,7 +5,7 @@ import 'package:premier_league/widgets/statistics_card.dart';
 class StatisticsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Widget titleGol() {
+    Widget label(String title, String subTitle) {
       return Container(
         margin: EdgeInsets.symmetric(horizontal: defaultMargin),
         child: Column(
@@ -13,7 +13,7 @@ class StatisticsPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Gol',
+                title,
                 style:
                     primaryTextStyle.copyWith(fontSize: 14, fontWeight: light),
               ),
@@ -27,7 +27,7 @@ class StatisticsPage extends StatelessWidget {
                       fontSize: 12, fontWeight: light),
                 ),
                 Text(
-                  'Gol',
+                  subTitle,
                   style: secondaryTextStyle.copyWith(
                       fontSize: 12, fontWeight: light),
                 ),
@@ -50,39 +50,35 @@ class StatisticsPage extends StatelessWidget {
       );
     }
 
-    Widget titleUmpan() {
+    Widget contentUmpan() {
       return Container(
-        margin: EdgeInsets.only(
-            left: defaultMargin, right: defaultMargin, top: defaultMargin),
+        margin: EdgeInsets.symmetric(horizontal: defaultMargin, vertical: 12),
         child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Umpan Gol',
-                style:
-                    primaryTextStyle.copyWith(fontSize: 14, fontWeight: light),
-              ),
-              SizedBox(
-                height: 6,
-              ),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                Text(
-                  'Pemain',
-                  style: secondaryTextStyle.copyWith(
-                      fontSize: 12, fontWeight: light),
-                ),
-                Text(
-                  'Umpan Gol',
-                  style: secondaryTextStyle.copyWith(
-                      fontSize: 12, fontWeight: light),
-                ),
-              ]),
-            ]),
+          children: [
+            StatisticsCard(),
+            StatisticsCard(),
+            StatisticsCard(),
+            StatisticsCard(),
+          ],
+        ),
       );
     }
 
-    Widget contentUmpan() {
+    Widget contentKartuKuning() {
+      return Container(
+        margin: EdgeInsets.symmetric(horizontal: defaultMargin, vertical: 12),
+        child: Column(
+          children: [
+            StatisticsCard(),
+            StatisticsCard(),
+            StatisticsCard(),
+            StatisticsCard(),
+          ],
+        ),
+      );
+    }
+
+    Widget contentKartuMerah() {
       return Container(
         margin: EdgeInsets.symmetric(horizontal: defaultMargin, vertical: 12),
         child: Column(
@@ -98,9 +94,16 @@ class StatisticsPage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: backgroundColor1,
-      body: ListView(
-          padding: EdgeInsets.symmetric(vertical: 16),
-          children: [titleGol(), contentGol(), titleUmpan(), contentUmpan()]),
+      body: ListView(padding: EdgeInsets.symmetric(vertical: 16), children: [
+        label('Gol', 'Gol'),
+        contentGol(),
+        label('Umpan Gol', 'Umpan Gol'),
+        contentUmpan(),
+        label('Kartu Kuning', 'Kartu Kuning'),
+        contentKartuKuning(),
+        label('Kartu Merah', 'Kartu Merah'),
+        contentKartuMerah(),
+      ]),
     );
   }
 }

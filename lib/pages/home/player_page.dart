@@ -10,50 +10,38 @@ class PlayerPage extends StatelessWidget {
       body: ListView(
         padding: EdgeInsets.symmetric(vertical: 16, horizontal: defaultMargin),
         children: [
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                PlayerCard(),
-                PlayerCard(),
-                PlayerCard(),
-                PlayerCard(),
-                PlayerCard(),
-                PlayerCard(),
-                PlayerCard(),
-              ],
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              PlayerCard(),
+              PlayerCard(),
+              PlayerCard(),
+              PlayerCard(),
+              PlayerCard(),
+              PlayerCard(),
+            ],
           ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                PlayerCard(),
-                PlayerCard(),
-                PlayerCard(),
-                PlayerCard(),
-                PlayerCard(),
-                PlayerCard(),
-                PlayerCard(),
-              ],
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              PlayerCard(),
+              PlayerCard(),
+              PlayerCard(),
+              PlayerCard(),
+              PlayerCard(),
+              PlayerCard(),
+            ],
           ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                PlayerCard(),
-                PlayerCard(),
-                PlayerCard(),
-                PlayerCard(),
-                PlayerCard(),
-                PlayerCard(),
-                PlayerCard(),
-              ],
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              PlayerCard(),
+              PlayerCard(),
+              PlayerCard(),
+              PlayerCard(),
+              PlayerCard(),
+              PlayerCard(),
+            ],
           ),
         ],
       ),

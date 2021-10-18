@@ -9,8 +9,7 @@ class StatisticsCard extends StatelessWidget {
           border: Border(
         top: BorderSide(color: Color(0xff3C4043)),
       )),
-      margin: EdgeInsets.symmetric(vertical: 8),
-      padding: EdgeInsets.only(top: defaultMargin, bottom: 8, left: 12),
+      padding: EdgeInsets.only(top: 16, bottom: 16, left: 12),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,

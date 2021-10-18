@@ -21,7 +21,7 @@ class MatchPage extends StatelessWidget {
     }
 
     Widget content() {
-      return Row(
+      return Column(
         children: [MatchCard(), MatchCard()],
       );
     }
