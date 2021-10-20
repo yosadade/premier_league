@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:premier_league/models/player_model.dart';
 import 'package:premier_league/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PlayerCard extends StatelessWidget {
+  final PlayerModel playerModel;
+
+  PlayerCard(this.playerModel);
+
   @override
   Widget build(BuildContext context) {
-    Future<void> _launchUrl() async {
-      const url = 'https://id.wikipedia.org/wiki/Cristiano_Ronaldo';
+    Future<void> _launchUrl(PlayerModel playerModel) async {
+      var url = playerModel.link;
       if (await canLaunch(url)) {
         await launch(url);
       } else {
@@ -15,7 +20,7 @@ class PlayerCard extends StatelessWidget {
     }
 
     return GestureDetector(
-      onTap: _launchUrl,
+      onTap: () => _launchUrl(playerModel),
       child: Container(
         width: MediaQuery.of(context).size.width * 12 / 100 ,
         padding: EdgeInsets.only(bottom: 8),
@@ -33,29 +38,29 @@ class PlayerCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Image.asset(
-                    'assets/player_1.jpeg',
+                    playerModel.imgPemain,
                     width: 96,
                     height: 96,
                   )),
               SizedBox(height: 6),
               Text(
-                'Cristiano Ronaldo',
+                playerModel.nama,
                 style: primaryTextStyle.copyWith(
                     fontSize: 14, fontWeight: light),
                 textAlign: TextAlign.center,
               ),
-              Text('Penyerang',
+              Text(playerModel.posisi,
                   style: secondaryTextStyle.copyWith(
                       fontSize: 12, fontWeight: light)),
               SizedBox(height: 6),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset('assets/manunited.png', width: 16, height: 16),
+                  Image.asset(playerModel.imgClub, width: 16, height: 16),
                   SizedBox(
                     width: 6,
                   ),
-                  Text('Man Utd',
+                  Text(playerModel.club,
                       style: secondaryTextStyle.copyWith(
                           fontSize: 12, fontWeight: light))
                 ],
