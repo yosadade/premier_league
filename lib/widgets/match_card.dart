@@ -10,7 +10,7 @@ class MatchCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-          child: Container(
+      child: Container(
         width: MediaQuery.of(context).size.width * 0.5,
         padding: EdgeInsets.symmetric(horizontal: defaultMargin, vertical: 12),
         decoration: BoxDecoration(
@@ -45,17 +45,21 @@ class MatchCard extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(matchModel.homeClub,
-                        style: secondaryTextStyle.copyWith(
-                            fontSize: 14, fontWeight: light)),
+                      Text(matchModel.homeClub.toString(),
+                          style: matchModel.homeSkor > matchModel.awaySkor
+                              ? primaryTextStyle.copyWith(
+                                  fontSize: 14, fontWeight: light)
+                              : secondaryTextStyle.copyWith(
+                                  fontSize: 14, fontWeight: light)),
                     SizedBox(
                       height: 16,
                     ),
-                    Text(
-                      matchModel.awayClub,
-                      style: primaryTextStyle.copyWith(
-                          fontSize: 14, fontWeight: light),
-                    ),
+                      Text(matchModel.awayClub.toString(),
+                          style: matchModel.awaySkor > matchModel.homeSkor
+                              ? primaryTextStyle.copyWith(
+                                  fontSize: 14, fontWeight: light)
+                              : secondaryTextStyle.copyWith(
+                                  fontSize: 14, fontWeight: light)),
                   ],
                 )
               ],
@@ -70,19 +74,21 @@ class MatchCard extends StatelessWidget {
                   )),
                   child: Column(
                     children: [
-                      Text(
-                        matchModel.homeSkor.toString(),
-                        style: secondaryTextStyle.copyWith(
-                            fontSize: 14, fontWeight: light),
-                      ),
+                      Text(matchModel.homeSkor.toString(),
+                          style: matchModel.homeSkor > matchModel.awaySkor
+                              ? primaryTextStyle.copyWith(
+                                  fontSize: 14, fontWeight: light)
+                              : secondaryTextStyle.copyWith(
+                                  fontSize: 14, fontWeight: light)),
                       SizedBox(
                         height: 16,
                       ),
-                      Text(
-                        matchModel.awaySkor.toString(),
-                        style: primaryTextStyle.copyWith(
-                            fontSize: 14, fontWeight: light),
-                      ),
+                      Text(matchModel.awaySkor.toString(),
+                          style: matchModel.awaySkor > matchModel.homeSkor
+                              ? primaryTextStyle.copyWith(
+                                  fontSize: 14, fontWeight: light)
+                              : secondaryTextStyle.copyWith(
+                                  fontSize: 14, fontWeight: light)),
                     ],
                   ),
                 ),

@@ -6,7 +6,7 @@ import 'package:premier_league/widgets/match_card.dart';
 class MatchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Widget titleMatch() {
+    Widget titleMatch(String title) {
       return Container(
         decoration: BoxDecoration(
             color: Color(0xff171717),
@@ -16,7 +16,7 @@ class MatchPage extends StatelessWidget {
             )),
         padding: EdgeInsets.only(
             left: defaultMargin, right: defaultMargin, top: 12, bottom: 12),
-        child: Text('Pertandingan ke-8 dari 38',
+        child: Text(title,
             style: primaryTextStyle.copyWith(fontSize: 14, fontWeight: light)),
       );
     }
@@ -142,7 +142,11 @@ class MatchPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: backgroundColor1,
       body: ListView(
-        children: [titleMatch(), content()],
+        children: [
+          titleMatch('Pertandigan ke-8 dari 38'),
+          content(),
+          titleMatch('Pertandigan ke-9 dari 38')
+        ],
       ),
     );
   }

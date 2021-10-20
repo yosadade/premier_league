@@ -30,7 +30,7 @@ class MainPage extends StatelessWidget {
                 ),
                 SizedBox(height: 6),
                 Text(
-                  'Pertandingan ke-7 dari 38',
+                  'Pertandingan ke-8 dari 38',
                   style: secondaryTextStyle.copyWith(
                       fontSize: 14, fontWeight: light),
                 ),
