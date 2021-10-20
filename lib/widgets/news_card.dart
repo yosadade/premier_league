@@ -11,9 +11,8 @@ class NewsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future<void> _launchUrl() async {
-      const url =
-          'https://www.bolasport.com/read/312935016/jadi-klub-sultan-newcastle-mau-borong-4-pemain-manchester-united';
+    Future<void> _launchUrl(NewsModel newsModel) async {
+      var url = newsModel.link;
       if (await canLaunch(url)) {
         await launch(url);
       } else {
@@ -22,7 +21,7 @@ class NewsCard extends StatelessWidget {
     }
 
     return GestureDetector(
-      onTap: _launchUrl,
+      onTap: () => _launchUrl(newsModel),
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
         margin: EdgeInsets.symmetric(vertical: 8, horizontal: defaultMargin),
