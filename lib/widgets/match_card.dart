@@ -5,7 +5,7 @@ class MatchCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: defaultMargin, vertical: 16),
+      padding: EdgeInsets.symmetric(horizontal: defaultMargin, vertical: 12),
       decoration: BoxDecoration(
           border: Border(
         bottom: BorderSide(color: Color(0xff3C4043)),
@@ -20,13 +20,13 @@ class MatchCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Image.asset(
-                    'assets/club_1.png',
+                    'assets/liverpool.png',
                     width: 24,
                     height: 24,
                   ),
                   SizedBox(height: 16),
                   Image.asset(
-                    'assets/club_1.png',
+                    'assets/brighton.png',
                     width: 24,
                     height: 24,
                   )

@@ -51,7 +51,7 @@ class PlayerCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset('assets/club_1.png', width: 16, height: 16),
+                  Image.asset('assets/manunited.png', width: 16, height: 16),
                   SizedBox(
                     width: 6,
                   ),
